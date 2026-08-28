@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FAF8F3;
+  --color-surface: #F3F0E8;
+  --color-ink: #262420;
+  --color-ink-soft: #6E6A62;
+  --color-border: #E4DFD3;
+  --color-accent: #33475A;
+  --color-accent-soft: #E4E9EC;
+
+  --font-mincho: "Shippori Mincho", serif;
+  --font-gothic: "Noto Sans JP", sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+}

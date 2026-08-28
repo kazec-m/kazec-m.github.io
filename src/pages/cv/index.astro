@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// TODO(本人編集予定): 20XX の部分に実際の年号を入れてください。
+const entries = [
+  { period: '20XX', text: '国立大学大学院 生物・化学専攻(修士)修了' },
+  { period: '20XX–20XX', text: '大学 技術員' },
+  { period: '20XX', text: '出産・育児のため退職' },
+  { period: '20XX–20XX', text: '子の小学校入学を機にパート勤務、翌年離職' },
+  { period: '20XX–20XX', text: '母の逝去に伴う父の介護のためフルタイム就労が困難' },
+  { period: '20XX', text: 'プログラミングスクール入学・卒業' },
+];
+---
+
+<Layout title="CV">
+  <div class="max-w-2xl mx-auto px-6 md:px-8 lg:px-12 py-14">
+    <h1 class="font-mincho text-2xl text-ink mb-8">CV</h1>
+
+    <div class="flex flex-col">
+      {entries.map((entry, i) => (
+        <div
+          class={`flex gap-5 py-3.5 font-gothic ${
+            i < entries.length - 1 ? 'border-b border-border' : ''
+          }`}
+        >
+          <span class="text-[13px] text-ink-soft min-w-[92px] shrink-0">{entry.period}</span>
+          <span class="text-sm text-ink">{entry.text}</span>
+        </div>
+      ))}
+    </div>
+
+    <p class="font-gothic text-xs text-ink-soft mt-6">
+      9年間、小学校での読み聞かせボランティアを継続。
+    </p>
+  </div>
+</Layout>

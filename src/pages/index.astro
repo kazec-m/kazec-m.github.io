@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const featuredWork = [
+  { title: 'Scanly', href: '/work/#scanly' },
+  { title: 'おかんペイ', href: '/work/#okanpay' },
+  { title: '子育ての困りごとを、エンジニアリングで解決する', href: '/work/#personal' },
+];
+---
+
+<Layout title="About">
+  <div class="max-w-2xl mx-auto px-6 md:px-8 lg:px-12 py-14">
+    <h1 class="font-mincho text-3xl text-ink">Mariko Kazetani</h1>
+    <p class="font-mincho text-lg text-ink mt-1.5">Engineering, quietly and clearly.</p>
+
+    
+    <p class="font-gothic text-[15px] leading-8 text-ink mt-7 max-w-[30em]">
+      要件定義から、フロントエンド、バックエンド、データベース設計、デプロイまで一通り経験。
+      チーム開発ではバックエンドとインフラを中心に担当しています。
+      簡単なことを、ゆっくり、丁寧に伝えることを大切にしています。
+    </p>
+
+    <div class="mt-12">
+      <p class="font-gothic text-[13px] text-ink-soft mb-4">featured work</p>
+      <div class="flex flex-col gap-3">
+        {featuredWork.map((item) => (
+          <a
+            href={item.href}
+            class="flex items-center justify-between border border-border rounded-lg px-4 py-3.5 font-gothic text-sm text-ink hover:bg-surface transition-colors"
+          >
+            {item.title}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ink-soft"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

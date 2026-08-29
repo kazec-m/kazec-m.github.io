@@ -11,20 +11,19 @@ const Tag = (label: string) => label;
     <!-- ① Scanly -->
     <section id="scanly" class="py-11 border-b border-border scroll-mt-20">
       <h2 class="font-mincho text-[22px] text-ink">Scanly</h2>
-      <p class="font-gothic text-xs text-accent mt-1.5">認証・開発環境構築担当</p>
+      <p class="font-gothic text-xs text-accent mt-1.5">開発環境構築</p>
       <!-- TODO(本人編集予定): 説明文はさらに調整予定とのこと -->
       <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
         書類の写真を撮るだけでAIが期限を読み取り、家族のカレンダーに自動登録するアプリ。
-        4人チームで認証・開発環境を担当。
+        4人チーム・開発期間3週間。
       </p>
       <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
-        <li>Firebase認証のJWT検証を、DBに依存せず単体で確認できる設計で実装</li>
-        <li>3人分の実装で挙動が割れていた「未登録ユーザー」処理を発見し、統一方針を提案</li>
-        <li>チーム全体のdocker-compose環境構築を主導</li>
+        <li>チーム全体のDocker Compose環境構築を主導</li>
+        <li>チーム内で挙動が割れていた「未登録ユーザー」処理を発見し、統一方針を提案・実装</li>
         <li>講師のすすめでペアプロを実施、初めてのRenderデプロイをサポート</li>
       </ul>
       <div class="flex gap-2 flex-wrap mt-3.5">
-        {['FastAPI', 'Python', 'PostgreSQL', 'Firebase Auth', 'Docker Compose', 'Vercel', 'Render'].map((t) => (
+        {['Docker Compose','FastAPI', 'PostgreSQL', 'Firebase Auth', 'Render'].map((t) => (
           <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
         ))}
       </div>
@@ -51,9 +50,8 @@ const Tag = (label: string) => label;
       <h2 class="font-mincho text-[22px] text-ink">おかんペイ</h2>
       <p class="font-gothic text-xs text-accent mt-1.5">要件定義・仕様設計担当</p>
       <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
-        テストでいい点を取ると、その場でお小遣い(ボーナス)が子ども専用の口座に自動で振り込まれるLINE Bot。
-        3人・開発期間2日の制約の中で要件定義とボーナス金額の判定ルール設計を担当。
-        完成後はコードを深く読み解き、発表では技術の仕組みをかみ砕いて説明した。
+        テスト結果に合わせて、お小遣いが子ども口座に振り込む動線に誘導するLINE Bot。
+        3人・開発期間2日で、要件定義と金額の判定ルール設計を担当。
       </p>
       <div class="flex gap-2 flex-wrap mt-3.5">
         {['LINE Messaging API', 'AWS Lambda', 'sunabar API'].map((t) => (
@@ -80,7 +78,7 @@ const Tag = (label: string) => label;
 
     <!-- ③ 個人開発 -->
     <section id="personal" class="py-11 scroll-mt-20">
-      <h2 class="font-mincho text-[22px] text-ink">子育ての困りごとを、エンジニアリングで解決する</h2>
+      <h2 class="font-mincho text-[22px] text-ink">エンジニアリグで、子育てをほんの少しだけ楽に</h2>
       <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[34em]">
         ラズパイでハードウェアを、ルーターでネットワークを制御し、子育てで直面した2つの困りごとを解決した個人開発。
         実装や試行錯誤の過程はQiitaにまとめています。
@@ -101,13 +99,13 @@ const Tag = (label: string) => label;
           target="_blank"
           rel="noreferrer"
           class="font-gothic text-sm text-ink hover:text-accent"
-        >朝6時に英会話ラジオで家族を起こす(Raspberry Pi × Bluetooth) →</a>
+        >Qiita: 朝6時に英会話ラジオで家族を起こす(Raspberry Pi × Bluetooth) →</a>
         <a
           href="https://qiita.com/okann/items/7ab7a78e4f82b58b94aa"
           target="_blank"
           rel="noreferrer"
           class="font-gothic text-sm text-ink hover:text-accent"
-        >子どものスマホ依存をルーターで解決した話(ネットワーク制御) →</a>
+        >Qiita: 子どものスマホ依存をルーターで解決した話(ネットワーク制御) →</a>
       </div>
     </section>
   </div>

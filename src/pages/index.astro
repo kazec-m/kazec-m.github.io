@@ -1,20 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const featuredWork = [
-  { title: 'Scanly', href: '/work/#scanly' },
-  { title: 'おかんペイ', href: '/work/#okanpay' },
-  { title: '子育ての困りごとを、エンジニアリングで解決する', href: '/work/#personal' },
-];
 ---
 
 <Layout title="About">
-  <div class="max-w-2xl mx-auto px-6 md:px-8 lg:px-12 py-14">
-    <h1 class="font-mincho text-3xl text-ink">Mariko Kazetani</h1>
-    <p class="font-mincho text-lg text-ink mt-1.5">Engineering, quietly and clearly.</p>
-
+  <div class="max-w-2xl mx-auto px-6 md:px-8 lg:px-12 py-8">
+    <p class="font-mincho text-lg text-ink">Engineering, quietly and clearly.</p>
     
-    <p class="font-gothic text-[15px] leading-8 text-ink mt-7 max-w-[30em]">
-      ユーザーの課題解決に責任をもち、要件定義から実装までをチーム開発で行いました。現場への定着を重視しています。</p>
+    <div class="mt-7">
+    <img
+      src="/profile.jpg"
+      alt="Mariko Kazetani"
+      width="750"
+      height="984"
+      class="w-36 h-auto flex-shrink-0 rounded-lg"
+    />
+    </div>
+    
+    <div class="mt-8">
+          <p class="font-gothic text-sm text-ink-soft">
+            Tools I work with
+          </p>  
+      <p class="font-tothic text-sm leading-7 text-ink mt-1">
+        Python · FastAPI · TypeScript · React<br />
+        PostgreSQL · Docker · Git
+      </p>
+    </div>
   </div>
 </Layout>

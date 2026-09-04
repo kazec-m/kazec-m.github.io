@@ -12,15 +12,14 @@ const Tag = (label: string) => label;
     <section id="scanly" class="py-11 border-b border-border scroll-mt-20">
       <h2 class="font-mincho text-[22px] text-ink">Scanly</h2>
       <p class="font-gothic text-xs text-accent mt-1.5">開発環境構築</p>
-      <!-- TODO(本人編集予定): 説明文はさらに調整予定とのこと -->
       <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
-        書類の写真を撮るだけでAIが期限を読み取り、家族のカレンダーに自動登録するアプリ。
-        課題発掘からデプロイまで、4人チーム・開発期間4週間。
+        書類の写真を撮るだけでAIが期限を読み取り、家族のカレンダーに自動登録するアプリ。<br />
+        課題発掘からデプロイ発表まで開発期間４週間（４人/Agent無し）
       </p>
       <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
-        <li>チーム全体のDocker Compose環境構築を主導</li>
+        <li>チーム全体のDocker Compose環境構築</li>
         <li>チーム内で挙動が割れていた「未登録ユーザー」処理を発見し、統一方針を提案・実装</li>
-        <li>講師のすすめでペアプロを実施、初めてのRenderデプロイをサポート</li>
+        <li>ペアプロで初めてのRenderデプロイをサポート</li>
       </ul>
       <div class="flex gap-2 flex-wrap mt-3.5">
         {['Docker Compose','FastAPI', 'PostgreSQL', 'Firebase Auth', 'Render'].map((t) => (
@@ -28,7 +27,7 @@ const Tag = (label: string) => label;
         ))}
       </div>
       <video
-        class="w-full rounded-lg mt-4 bg-surface"
+        class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
         controls
         muted
         playsinline
@@ -51,7 +50,8 @@ const Tag = (label: string) => label;
       <p class="font-gothic text-xs text-accent mt-1.5">要件定義・仕様設計担当</p>
       <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
         テスト結果に合わせて、お小遣いが子ども口座に振り込む動線に誘導するLINE Bot。
-        要件定義と金額の判定ルール設計を担当。3人・開発期間2日。
+        要件定義と金額の判定ルール設計を担当。<br />
+        3人・開発期間2日・Agent無し。
       </p>
       <div class="flex gap-2 flex-wrap mt-3.5">
         {['LINE Messaging API', 'AWS Lambda', 'sunabar API'].map((t) => (
@@ -59,7 +59,7 @@ const Tag = (label: string) => label;
         ))}
       </div>
       <video
-        class="w-full rounded-lg mt-4 bg-surface"
+        class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
         controls
         muted
         playsinline
@@ -84,7 +84,7 @@ const Tag = (label: string) => label;
         実装や試行錯誤の過程はQiitaにまとめています。
       </p>
       <div class="flex gap-2 flex-wrap mt-3.5">
-        {['Raspberry Pi','Lua', 'Selenium', 'Bluetooth', 'Network'].map((t) => (
+        {['Raspberry Pi','Lua', 'Selenium', 'Bluetooth', 'Home Network', 'Device access control'].map((t) => (
           <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
         ))}
       </div>

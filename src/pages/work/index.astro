@@ -7,6 +7,39 @@ const Tag = (label: string) => label;
 <Layout title="Work">
   <div class="max-w-3xl mx-auto px-6 md:px-8 lg:px-12 py-14">
     <h1 class="font-mincho text-2xl text-ink mb-2">Work</h1>
+     <!-- ③ 個人開発 -->
+    <section id="personal" class="py-11 border-b border-border scroll-mt-20">
+      <p class="font-mincho text-sm text-ink-soft mb-1.5">[個人開発]</p>
+      <h2 class="font-mincho text-[22px] text-ink">子育てをほんの少しだけ楽しく</h2>
+      <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[34em]">
+        ラズパイでAmazon Echoを制御し、ルーターで家庭Wi-Fiホワイトリストを構築しました、２つの子育て課題を解決した個人開発。
+        実装や試行錯誤についてはQiitaにまとめています。
+      </p>
+      <div class="flex gap-2 flex-wrap mt-3.5">
+        {['Raspberry Pi','Lua', 'Selenium', 'Bluetooth', 'Home Network', 'Device access control'].map((t) => (
+          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
+        ))}
+      </div>
+      <img
+        src="/work/personal-projects-illustration.png"
+        alt="朝6時に英会話ラジオで子どもを起こす仕組みと、夜22時にルーターでWi-Fiを止める仕組みを示した、家の断面図のイラスト"
+        class="max-h-[60vh] w-auto mx-auto rounded-lg mt-4"
+      />
+      <div class="flex flex-col gap-2 mt-4">
+        <a
+          href="https://qiita.com/okann/items/8150dca24bff3fb91763"
+          target="_blank"
+          rel="noreferrer"
+          class="font-gothic text-sm text-ink hover:text-accent"
+        >Qiita: 朝6時に英会話ラジオで家族を起こす(Raspberry Pi × Bluetooth) →</a>
+        <a
+          href="https://qiita.com/okann/items/7ab7a78e4f82b58b94aa"
+          target="_blank"
+          rel="noreferrer"
+          class="font-gothic text-sm text-ink hover:text-accent"
+        >Qiita: 子どものスマホ依存をルーターで解決した話(ネットワーク制御) →</a>
+      </div>
+    </section>
 
     <!-- ① Scanly -->
     <section id="scanly" class="py-11 border-b border-border scroll-mt-20">
@@ -46,7 +79,7 @@ const Tag = (label: string) => label;
     </section>
 
     <!-- ② おかんペイ -->
-    <section id="okanpay" class="py-11 border-b border-border scroll-mt-20">
+    <section id="okanpay" class="py-11 scroll-mt-20">
       <p class="font-mincho text-sm text-ink-soft mb-1.5">[チーム開発 · スクール]</p>
       <h2 class="font-mincho text-[22px] text-ink">おかんペイ</h2>
       <p class="font-gothic text-xs text-accent mt-1.5">要件定義・仕様設計担当</p>
@@ -78,38 +111,6 @@ const Tag = (label: string) => label;
       >GitHub →</a>
     </section>
 
-    <!-- ③ 個人開発 -->
-    <section id="personal" class="py-11 scroll-mt-20">
-      <p class="font-mincho text-sm text-ink-soft mb-1.5">[個人開発]</p>
-      <h2 class="font-mincho text-[22px] text-ink">子育てをほんの少しだけ楽しく</h2>
-      <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[34em]">
-        ラズパイでハードウェアを、ルーターでネットワークを制御し、２つの子育て課題を解決した個人開発。
-        実装や試行錯誤についてはQiitaにまとめています。
-      </p>
-      <div class="flex gap-2 flex-wrap mt-3.5">
-        {['Raspberry Pi','Lua', 'Selenium', 'Bluetooth', 'Home Network', 'Device access control'].map((t) => (
-          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
-        ))}
-      </div>
-      <img
-        src="/work/personal-projects-illustration.png"
-        alt="朝6時に英会話ラジオで子どもを起こす仕組みと、夜22時にルーターでWi-Fiを止める仕組みを示した、家の断面図のイラスト"
-        class="w-full rounded-lg mt-4"
-      />
-      <div class="flex flex-col gap-2 mt-4">
-        <a
-          href="https://qiita.com/okann/items/8150dca24bff3fb91763"
-          target="_blank"
-          rel="noreferrer"
-          class="font-gothic text-sm text-ink hover:text-accent"
-        >Qiita: 朝6時に英会話ラジオで家族を起こす(Raspberry Pi × Bluetooth) →</a>
-        <a
-          href="https://qiita.com/okann/items/7ab7a78e4f82b58b94aa"
-          target="_blank"
-          rel="noreferrer"
-          class="font-gothic text-sm text-ink hover:text-accent"
-        >Qiita: 子どものスマホ依存をルーターで解決した話(ネットワーク制御) →</a>
-      </div>
-    </section>
+   
   </div>
 </Layout>

@@ -11,11 +11,7 @@ const Tag = (label: string) => label;
     <section id="personal" class="py-11 border-b border-border scroll-mt-20">
       <p class="font-mincho text-sm text-ink-soft mb-1.5">[個人開発]</p>
       <h2 class="font-mincho text-[22px] text-ink">子育てをほんの少しだけ楽しく</h2>
-      <div class="flex gap-2 flex-wrap mt-3.5">
-        {['Raspberry Pi','Lua', 'Selenium', 'Bluetooth', 'Home Network', 'Device access control'].map((t) => (
-          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
-        ))}
-      </div>
+
       <div class="flex flex-col gap-2 mt-4">
         <a
           href="https://qiita.com/okann/items/8150dca24bff3fb91763"
@@ -35,7 +31,11 @@ const Tag = (label: string) => label;
         alt="朝6時に英会話ラジオで子どもを起こす仕組みと、夜22時にルーターでWi-Fiを止める仕組みを示した、家の断面図のイラスト"
         class="max-h-[60vh] w-auto mx-auto rounded-lg mt-4"
       />
-      
+      <div class="flex gap-2 flex-wrap mt-3.5">
+        {['Raspberry Pi','Lua', 'Selenium', 'Bluetooth', 'Home Network', 'Device access control'].map((t) => (
+          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
+        ))}
+      </div>
     </section>
 
     <!-- ① Scanly -->

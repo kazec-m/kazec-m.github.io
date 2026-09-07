@@ -3,11 +3,12 @@
 Mariko Kazetaniのポートフォリオサイトです。
  
 **公開URL** → https://kazec-m.github.io
- 
-![About](./screenshot-about.png)
-![Work](./screenshot-work.png)
-<!-- 撮れたら、リポジトリ直下に screenshot-about.png / screenshot-work.png として置いてください -->
-<!-- Workは1ビューポート分ではなく、1プロジェクト分(動画・説明・タグまで)が写る位置までスクロールしてから撮影 -->
+<table>
+  <tr>
+    <td><img src="./screenshot-about.png" width="45%" alt="About"></td>
+    <td><img src="./screenshot-work.png" width="45%" alt="Work"></td>
+  </tr>
+</table>
  
 ## 使用技術
  
@@ -16,7 +17,7 @@ Mariko Kazetaniのポートフォリオサイトです。
 - GitHub Actions(GitHub Pagesへの自動デプロイ)
 ## 設計意図
  
-和紙のような温かみのある配色と、明朝体・ゴシック体を絞って使うことで、静かで落ち着いた印象を意識しています。About・CVページはヘッダー込みで画面の高さ(100svh)に固定し、スクロールなしで一目で内容が把握できるようにしています(Workページのみ、プロジェクトごとに縦スクロールする構成です)。
+About・CVページはヘッダー込みで画面の高さ(100svh)に固定し、スクロールなしで一目で内容が把握できるようにしています(Workページのみ、プロジェクトごとに縦スクロールする構成です)。
  
 ## ローカルでの動かし方
  

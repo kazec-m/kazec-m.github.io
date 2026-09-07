@@ -27,6 +27,12 @@ npm run dev
 ```
  
 `http://localhost:4321` で確認できます。
+
+## Lighthouseスコア(2026年9月時点・シークレットモード計測)
+
+| Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|
+| 93 | 100 | 100 | 100 |
  
 ## License
  

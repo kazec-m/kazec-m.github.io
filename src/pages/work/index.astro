@@ -5,7 +5,7 @@ const Tag = (label: string) => label;
 ---
 
 <Layout title="Work">
-  <div class="max-w-2xl max-w-5xl mx-auto px-6 md:px-8 lg:px-12 py-14">
+  <div class="max-w-2xl md:max-w-5xl mx-auto px-6 md:px-8 lg:px-12 py-14">
     <h1 class="font-mincho text-sm text-ink-soft mb-3">Work</h1>
      <!-- ③ 個人開発 -->
     <section id="personal" class="py-11 border-b border-border scroll-mt-20">
@@ -40,24 +40,14 @@ const Tag = (label: string) => label;
     </section>
 
     <!-- ① Scanly -->
-    <section id="scanly" class="py-11 border-b border-border scroll-mt-20">
-      <p class="font-mincho text-sm text-ink-soft mb-1.5">[チーム開発 · スクール]</p>
-      <h2 class="font-mincho text-[22px] text-ink">Scanly</h2>
-      <p class="font-gothic text-xs text-accent mt-1.5">開発環境構築</p>
-      <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
-        AIで書類画像から〆切・内容を解読し家族カレンダーに自動登録。<br />
-        開発期間４週間・４人
-      </p>
-      <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
-        <li>チーム全体のDocker Compose構築</li>
-        <li>チーム内で挙動が割れていた「未登録ユーザー」処理を発見し、統一方針を提案・実装</li>
-        <li>ペアプロでRenderデプロイをサポート</li>
-      </ul>
-      <div class="flex gap-2 flex-wrap mt-3.5">
-        {['Docker Compose','FastAPI', 'PostgreSQL', 'Adminer', 'Firebase Authentication', 'Render'].map((t) => (
-          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
-        ))}
-      </div>
+<section id="scanly" class="py-11 border-b border-border scroll-mt-20">
+  <p class="font-mincho text-sm text-ink-soft mb-1.5">[チーム開発 · スクール]</p>
+  <h2 class="font-mincho text-[22px] text-ink">Scanly</h2>
+
+  <div class="flex flex-col md:flex-row gap-6 mt-4">
+
+    <!-- 左側：動画 -->
+    <div class="md:w-3/5">
       <video
         class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
         controls
@@ -68,13 +58,39 @@ const Tag = (label: string) => label;
       >
         <source src="/work/scanly-highlight.mp4" type="video/mp4" />
       </video>
+
       <a
         href="https://github.com/kazec-m/scanly"
         target="_blank"
         rel="noreferrer"
         class="font-gothic text-xs text-ink-soft hover:text-accent inline-block mt-3"
       >GitHub →</a>
-    </section>
+    </div>
+
+    <!-- 右側：説明 -->
+    <div class="md:w-2/5">
+      <p class="font-gothic text-xs text-accent mt-1.5">開発環境構築</p>
+
+      <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
+        AIで書類画像から〆切・内容を解読し家族カレンダーに自動登録。<br />
+        開発期間４週間・４人
+      </p>
+
+      <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
+        <li>チーム全体のDocker Compose構築</li>
+        <li>チーム内で挙動が割れていた「未登録ユーザー」処理を発見し、統一方針を提案・実装</li>
+        <li>ペアプロでRenderデプロイをサポート</li>
+      </ul>
+
+      <div class="flex gap-2 flex-wrap mt-3.5">
+        {['Docker Compose','FastAPI', 'PostgreSQL', 'Adminer', 'Firebase Authentication', 'Render'].map((t) => (
+          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- ② おかんペイ -->
     <section id="okanpay" class="py-11 scroll-mt-20">

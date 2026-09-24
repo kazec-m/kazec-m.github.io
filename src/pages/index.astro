@@ -1,33 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// ============================================================
+// スキル一覧 ── 増やす・減らすときは、ここだけ書き換えます
+//
+//   mobile  : スマホ(768px 未満)。ラベルなしの短い行
+//   desktop : PC・タブレット(768px 以上)。ラベル付き
+//
+// 1行は 4 個くらいまでが目安です。超えると 2 行に折り返しますが、
+// ラベルの列は固定なので、2 行目は項目の下にそろいます。
+// ============================================================
+const sections = [
+  {
+    title: 'Tools I work with',
+    mobile: [
+      'TypeScript · Next.js · OpenAI API',
+      'Python · FastAPI · PostgreSQL',
+    ],
+    desktop: [
+      { label: 'Frontend', items: ['TypeScript', 'React', 'Next.js'] },
+      { label: 'Backend',  items: ['Python', 'FastAPI', 'Express', 'Firebase Auth'] },
+      { label: 'Database', items: ['PostgreSQL', 'MySQL', 'Prisma'] },
+      { label: 'Deploy',   items: ['Docker', 'AWS', 'Render', 'GitHub Actions'] },
+      { label: 'Quality',  items: ['pytest', 'ESLint', 'Playwright'] },
+      { label: 'Service',  items: ['OpenAI API', 'LINE Messaging API','Bank API'] },
+    ],
+  },
+  {
+    title: 'Personal projects',
+    mobile: [
+      'Raspberry Pi · Selenium · Bluetooth',
+      'Parental controls · Allowlist',
+    ],
+    desktop: [
+      // 朝6時に、ラズパイが自動でラジオを流す仕組み
+      { label: 'Radio',     items: ['Raspberry Pi', 'cron', 'Bash', 'Xvfb', 'Selenium', 'Bluetooth', 'WirePlumber'] },
+      // 折り返すときは 'Time limits' を外すと 1 行に収まります
+      { label: 'Router',    items: ['Parental controls', 'Allowlist', 'Time limits'] },
+      { label: 'This site', items: ['Astro', 'Tailwind CSS', 'GitHub Pages'] },
+    ],
+  },
+];
 ---
+
 <Layout title="About">
   <div class="max-w-2xl mx-auto px-6 md:px-8 lg:px-12 py-8">
     <p class="font-mincho text-sm text-ink-soft">
       about me
     </p>
 
-    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-10 mt-2">
+     <!--
+      PC:写真は上そろえ(md:items-start)にして、md:mt-7 で右の一覧の1行目(Frontend)の高さまで下げる。
+      1.75rem = 見出しの高さ(1.25rem) + 見出し下の余白 mt-2(0.5rem)
+      見出しの文字サイズや余白を変えたら、mt-7 の数字も変えてください。
+    -->
+    <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-10 mt-2">
       <img
         src="/profile.jpg"
         alt="Mariko Kazetani"
         width="750"
         height="984"
         class="w-28 aspect-[3/4] object-cover rounded-lg flex-shrink-0
-               md:w-auto md:aspect-auto md:h-[20vh]"
+               md:w-auto md:aspect-auto md:h-[20vh] md:mt-7"
       />
 
       <div>
-        <p class="font-mincho text-sm text-ink">[Tools I work with]</p>
-        <p class="font-gothic text-sm leading-8 text-ink-soft mt-2">
-          TypeScript · Next.js · OpenAI API<br />
-          Python · FastAPI · PostgreSQL <br />
-        </p>
-        <p class="font-mincho text-sm text-ink mt-8">[Personal projects]</p>
-        <p class="font-gothic text-sm leading-8 text-ink-soft mt-2">
-          Raspberry Pi · Lua · Selenium<span class="hidden sm:inline"> · Bluetooth</span>
-          <span class="hidden sm:block">Home network · device access control<br />Astro</span><br />
-        </p>
+        {sections.map((section, i) => (
+          <div class={i > 0 ? 'mt-8' : ''}>
+            <p class="font-mincho text-sm text-ink">[{section.title}]</p>
+
+            <!-- スマホ用:md 以上では隠す -->
+            <p class="font-gothic text-sm leading-8 text-ink-soft mt-2 md:hidden">
+              {section.mobile.map((line) => <span class="block">{line}</span>)}
+            </p>
+
+            <!-- PC用:md 未満では隠す。左にラベル、右に項目 -->
+            <dl class="hidden md:grid grid-cols-[5rem_1fr] items-baseline gap-x-2 mt-2 font-gothic text-sm leading-8">
+              {section.desktop.map(({ label, items }) => (
+                <Fragment>
+                  <dt class="text-xs text-ink">{label}</dt>
+                  <dd class="text-ink-soft">{items.join(' · ')}</dd>
+                </Fragment>
+              ))}
+            </dl>
+          </div>
+        ))}
       </div>
     </div>
   </div>

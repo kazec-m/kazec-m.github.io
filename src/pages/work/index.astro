@@ -7,19 +7,18 @@ const Tag = (label: string) => label;
 <Layout title="Work">
   <div class="max-w-2xl md:max-w-5xl mx-auto px-6 md:px-8 lg:px-12 py-14">
     <h1 class="font-mincho text-sm text-ink-soft mb-3">Work</h1>
-     <!-- ③ 個人開発 -->
+
+    <!-- ③ 個人開発 -->
     <section id="personal" class="py-11 border-b border-border scroll-mt-20">
       <p class="font-mincho text-sm text-ink-soft mb-1.5">[個人開発]</p>
       <h2 class="font-mincho text-[22px] text-ink">IoTで子育てを少し楽しく</h2>
-
       <div class="flex flex-col gap-4 mt-4">
         <a
           href="https://qiita.com/okann/items/8150dca24bff3fb91763"
           target="_blank"
           rel="noreferrer"
           class="font-gothic text-sm text-ink hover:text-accent"
-        >[Qiita] : 朝6時に英会話ラジオで家族を起こす(Raspberry Pi × Amazon Echo) →
-        </a>  
+        >[Qiita] : 朝6時に英会話ラジオで家族を起こす(Raspberry Pi × Amazon Echo) →</a>
         <a
           href="https://qiita.com/okann/items/7ab7a78e4f82b58b94aa"
           target="_blank"
@@ -33,101 +32,99 @@ const Tag = (label: string) => label;
         class="max-h-[60vh] w-auto mx-auto rounded-lg mt-4"
       />
       <div class="flex gap-2 flex-wrap mt-3.5">
-        {['Raspberry Pi','cron', 'Bash', 'Xvfb','Selenium', 'Bluetooth', 'Parental controls', 'Allowlist', 'Time limits'].map((t) => (
+        {['Raspberry Pi', 'cron', 'Bash', 'Xvfb', 'Selenium', 'Bluetooth', 'Parental controls', 'Allowlist', 'Time limits'].map((t) => (
           <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
         ))}
       </div>
     </section>
 
     <!-- ① Scanly -->
-<section id="scanly" class="py-11 border-b border-border scroll-mt-20">
-  <p class="font-mincho text-sm text-ink-soft mb-1.5">[チーム開発 · スクール]</p>
-  <h2 class="font-mincho text-[22px] text-ink">Scanly</h2>
-
-  <div class="flex flex-col md:flex-row gap-6 mt-4">
-
-    <!-- 左側：動画 -->
-    <div class="md:w-3/5">
-      <video
-        class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
-        controls
-        muted
-        playsinline
-        preload="none"
-        poster="/work/scanly-poster.jpg"
-      >
-        <source src="/work/scanly-highlight.mp4" type="video/mp4" />
-      </video>
-
-      <a
-        href="https://github.com/kazec-m/scanly"
-        target="_blank"
-        rel="noreferrer"
-        class="font-gothic text-xs text-ink-soft hover:text-accent inline-block mt-3"
-      >GitHub →</a>
-    </div>
-
-    <!-- 右側：説明 -->
-    <div class="md:w-2/5">
-      <p class="font-gothic text-xs text-accent mt-1.5">開発環境構築</p>
-
-      <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
-        AIで書類から内容を解読し家族カレンダーに自動登録<br />
-        開発期間４週間・４人
-      </p>
-
-      <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
-        <li>チーム全体のDocker Compose構築</li>
-        <li>チームで挙動が割れた「未登録ユーザー」処理を統一</li>
-        <li>ペアプロでRenderデプロイをサポート</li>
-      </ul>
-
-      <div class="flex gap-2 flex-wrap mt-3.5">
-        {['Docker Compose','FastAPI', 'PostgreSQL', 'Adminer', 'Firebase Authentication', 'Render'].map((t) => (
-          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
-        ))}
+    <section id="scanly" class="py-11 border-b border-border scroll-mt-20">
+      <p class="font-mincho text-sm text-ink-soft mb-1.5">[チーム開発 · スクール]</p>
+      <h2 class="font-mincho text-[22px] text-ink">Scanly</h2>
+      <div class="flex flex-col md:flex-row gap-6 mt-4">
+        <!-- 左側：動画 -->
+        <div class="md:w-3/5">
+          <video
+            class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
+            controls
+            muted
+            playsinline
+            preload="none"
+            poster="/work/scanly-poster.jpg"
+          >
+            <source src="/work/scanly-highlight.mp4" type="video/mp4" />
+          </video>
+          <a
+            href="https://github.com/kazec-m/scanly"
+            target="_blank"
+            rel="noreferrer"
+            class="font-gothic text-xs text-ink-soft hover:text-accent inline-block mt-3"
+          >GitHub →</a>
+        </div>
+        <!-- 右側：説明 -->
+        <div class="md:w-2/5">
+          <p class="font-gothic text-xs text-accent mt-1.5">開発環境構築</p>
+          <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
+            AIで書類から内容を解読し家族カレンダーに自動登録<br />
+            開発期間４週間・４人
+          </p>
+          <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
+            <li>チーム全体のDocker Compose構築</li>
+            <li>チームで挙動が割れた「未登録ユーザー」処理を統一</li>
+            <li>ペアプロでRenderデプロイをサポート</li>
+          </ul>
+          <div class="flex gap-2 flex-wrap mt-3.5">
+            {['Docker Compose', 'FastAPI', 'PostgreSQL', 'Adminer', 'Firebase Authentication', 'Render'].map((t) => (
+              <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- ② おかんペイ -->
     <section id="okanpay" class="py-11 scroll-mt-20">
       <p class="font-mincho text-sm text-ink-soft mb-1.5">[チーム開発 · スクール]</p>
       <h2 class="font-mincho text-[22px] text-ink">おかんペイ</h2>
-      <p class="font-gothic text-xs text-accent mt-1.5">仕様設計担当</p>
-      <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
-        テスト結果でお小遣いを子どもの口座に振込誘導するLINE Bot<br />
-        3人・開発期間3日
-      </p>
-      <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
-        <li>技術選定</li>
-        <li>金額の判定ルール設計</li>
-      </ul>
-      <div class="flex gap-2 flex-wrap mt-3.5">
-        {['LINE Messaging API', 'AWS Lambda', 'Bank API (sunabar)'].map((t) => (
-          <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
-        ))}
+      <div class="flex flex-col md:flex-row gap-6 mt-4">
+        <!-- 左側：動画 -->
+        <div class="md:w-3/5">
+          <video
+            class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
+            controls
+            muted
+            playsinline
+            preload="none"
+            poster="/work/okanpay-poster.jpg"
+          >
+            <source src="/work/okanpay-highlight.mp4" type="video/mp4" />
+          </video>
+          <a
+            href="https://github.com/kazec-m/okan-pay"
+            target="_blank"
+            rel="noreferrer"
+            class="font-gothic text-xs text-ink-soft hover:text-accent inline-block mt-3"
+          >GitHub →</a>
+        </div>
+        <!-- 右側：説明 -->
+        <div class="md:w-2/5">
+          <p class="font-gothic text-xs text-accent mt-1.5">仕様設計担当</p>
+          <p class="font-gothic text-sm leading-8 text-ink mt-3 max-w-[30em]">
+            テスト結果でお小遣いを子どもの口座に振込誘導するLINE Bot<br />
+            3人・開発期間3日
+          </p>
+          <ul class="font-gothic text-sm leading-7 text-ink mt-3 list-disc pl-5 space-y-0.5">
+            <li>技術選定</li>
+            <li>金額の判定ルール設計</li>
+          </ul>
+          <div class="flex gap-2 flex-wrap mt-3.5">
+            {['LINE Messaging API', 'AWS Lambda', 'Bank API (sunabar)'].map((t) => (
+              <span class="font-gothic text-xs text-accent bg-accent-soft px-3 py-1 rounded-full">{t}</span>
+            ))}
+          </div>
+        </div>
       </div>
-      <video
-        class="max-w-full max-h-[60vh] w-auto mx-auto rounded-lg mt-4 bg-surface"
-        controls
-        muted
-        playsinline
-        preload="none"
-        poster="/work/okanpay-poster.jpg"
-      >
-        <source src="/work/okanpay-highlight.mp4" type="video/mp4" />
-      </video>
-      <a
-        href="https://github.com/kazec-m/okan-pay"
-        target="_blank"
-        rel="noreferrer"
-        class="font-gothic text-xs text-ink-soft hover:text-accent inline-block mt-3"
-      >GitHub →</a>
     </section>
-
-   
   </div>
 </Layout>

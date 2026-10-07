@@ -13,3 +13,11 @@ test('can navigate to CV page', async ({ page }) => {
 
   await expect(page).toHaveURL(/\/cv/);
 });
+
+test('can navigate to Work page', async ({ page }) => {
+  await page.goto('https://kazec-m.github.io/');
+
+  await page.getByRole('link', { name: 'Work' }).click();
+
+  await expect(page).toHaveURL(/\/work/);
+});

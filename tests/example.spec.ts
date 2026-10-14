@@ -21,3 +21,13 @@ test('can navigate to Work page', async ({ page }) => {
 
   await expect(page).toHaveURL(/\/work/);
 });
+
+test('Qiita link is set correctly', async ({ page }) => {
+  await page.goto('https://kazec-m.github.io/work/');
+
+  const qiitaLink = page.locator(
+    'a[href="https://qiita.com/okann/items/8150dca24bff3fb91763"]'
+  );
+
+  await expect(qiitaLink).toBeVisible();
+});

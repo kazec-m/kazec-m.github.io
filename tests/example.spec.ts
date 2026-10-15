@@ -31,3 +31,11 @@ test('Qiita link is set correctly', async ({ page }) => {
 
   await expect(qiitaLink).toBeVisible();
 });
+
+test('top page is visible on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  await page.goto('https://kazec-m.github.io/');
+
+  await expect(page.locator('body')).toBeVisible();
+});

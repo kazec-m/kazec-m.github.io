@@ -46,4 +46,12 @@ test.describe('mobile', () => {
     await expect(page.getByRole('link', { name: 'CV' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Work' })).toBeVisible();
   });
+
+  test('page does not overflow horizontally', async ({ page }) => {
+    const hasHorizontalOverflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    });
+
+    expect(hasHorizontalOverflow).toBe(false);
+  });
 });

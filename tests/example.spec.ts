@@ -55,3 +55,9 @@ test.describe('mobile', () => {
     expect(hasHorizontalOverflow).toBe(false);
   });
 });
+
+test('unknown page returns 404', async ({ page }) => {
+  const response = await page.goto('https://kazec-m.github.io/this-page-does-not-exist');
+
+  expect(response?.status()).toBe(404);
+});

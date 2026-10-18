@@ -61,3 +61,11 @@ test('unknown page returns 404', async ({ page }) => {
 
   expect(response?.status()).toBe(404);
 });
+
+test('Work page heading is visible', async ({ page }) => {
+  await page.goto('https://kazec-m.github.io/work/');
+
+  await expect(
+    page.getByRole('heading', { name: 'Work' })
+  ).toBeVisible();
+});

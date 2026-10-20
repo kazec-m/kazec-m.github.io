@@ -69,3 +69,12 @@ test('Work page heading is visible', async ({ page }) => {
     page.getByRole('heading', { name: 'Work' })
   ).toBeVisible();
 });
+
+test('main navigation is visible on desktop', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+
+  await page.goto('https://kazec-m.github.io/');
+
+  await expect(page.getByRole('link', { name: 'CV' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Work' })).toBeVisible();
+});

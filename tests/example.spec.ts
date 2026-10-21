@@ -78,3 +78,11 @@ test('main navigation is visible on desktop', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'CV' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Work' })).toBeVisible();
 });
+
+test('Work page heading is visible on mobile', async ({ page }) => {
+  await page.goto('https://kazec-m.github.io/work/');
+
+  await expect(
+    page.getByRole('heading', { name: 'Work' })
+  ).toBeVisible();
+});

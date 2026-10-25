@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('has title', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle(/Mariko Kazetani\.io - About/i);
+  await expect(page).toHaveTitle(/THIS TITLE MUST NOT EXIST/i);
 });
 
 test('can navigate to CV page', async ({ page }) => {

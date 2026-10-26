@@ -21,6 +21,8 @@ Mariko Kazetaniのポートフォリオサイトです。
 - E2E tests with Playwright
 - Dependabot (dependency update monitoring)
 
+PlaywrightのE2Eテストは現在、公開サイトを対象に実行しています。PR内の変更を検証するCIへの改善を予定しています（Issue #4）。
+
 スマートフォンで開く場面を想定し、初期表示速度を最優先して選定しました。スクールではNext.js + Express + PostgreSQL + Renderの構成で開発していましたが、無料枠ではRenderのスリープ復帰に数秒〜数十秒かかり、Next.jsも静的なポートフォリオには機能過多でした。静的サイト生成に絞ったAstro + GitHub Pagesに切り替えたことで、サーバーの起動待ちなく即座に表示できる構成になっています。Lighthouseスコアは下記です。
 
 ## Lighthouseスコア(2026年9月時点・シークレットモード計測)

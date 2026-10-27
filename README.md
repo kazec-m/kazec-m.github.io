@@ -37,13 +37,16 @@ PlaywrightのE2Eテストは現在、公開サイトを対象に実行してい�
 レイアウト面でも一目で伝わることを重視し、About・CVページはヘッダー込みで画面の高さに固定(100svh)しました。和紙のような温かみのある配色と、明朝体・ゴシック体を絞った使い方で、静かで落ち着いた印象にも仕上げています。
 
 ## ローカルでの動かし方
-
-```bash
-npm install
+```
+npm ci
 npm run dev
 ```
-
-`http://localhost:4321` で確認できます。
+品質チェック：
+```
+npm run lint
+npm run format:check
+npm run build
+```
 
 ## License
 

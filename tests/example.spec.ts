@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
-  await page.goto('https://kazec-m.github.io/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Mariko Kazetani\.io - About/i);
 });
 
 test('can navigate to CV page', async ({ page }) => {
-  await page.goto('https://kazec-m.github.io/');
+  await page.goto('/');
 
   await page.getByRole('link', { name: 'CV' }).click();
 
@@ -15,7 +15,7 @@ test('can navigate to CV page', async ({ page }) => {
 });
 
 test('can navigate to Work page', async ({ page }) => {
-  await page.goto('https://kazec-m.github.io/');
+  await page.goto('/');
 
   await page.getByRole('link', { name: 'Work' }).click();
 
@@ -23,7 +23,7 @@ test('can navigate to Work page', async ({ page }) => {
 });
 
 test('Qiita link is set correctly', async ({ page }) => {
-  await page.goto('https://kazec-m.github.io/work/');
+  await page.goto('/work/');
 
   const qiitaLink = page.locator(
     'a[href="https://qiita.com/okann/items/8150dca24bff3fb91763"]'
@@ -35,7 +35,7 @@ test('Qiita link is set correctly', async ({ page }) => {
 test.describe('mobile', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('https://kazec-m.github.io/');
+    await page.goto('/');
   });
 
   test('top page is visible', async ({ page }) => {
@@ -57,13 +57,13 @@ test.describe('mobile', () => {
 });
 
 test('unknown page returns 404', async ({ page }) => {
-  const response = await page.goto('https://kazec-m.github.io/this-page-does-not-exist');
+  const response = await page.goto('/this-page-does-not-exist');
 
   expect(response?.status()).toBe(404);
 });
 
 test('Work page heading is visible', async ({ page }) => {
-  await page.goto('https://kazec-m.github.io/work/');
+  await page.goto('/work/');
 
   await expect(
     page.getByRole('heading', { name: 'Work' })
@@ -73,14 +73,14 @@ test('Work page heading is visible', async ({ page }) => {
 test('main navigation is visible on desktop', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
 
-  await page.goto('https://kazec-m.github.io/');
+  await page.goto('/');
 
   await expect(page.getByRole('link', { name: 'CV' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Work' })).toBeVisible();
 });
 
 test('Work page heading is visible on mobile', async ({ page }) => {
-  await page.goto('https://kazec-m.github.io/work/');
+  await page.goto('/work/');
 
   await expect(
     page.getByRole('heading', { name: 'Work' })

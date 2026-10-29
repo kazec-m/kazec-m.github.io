@@ -19,7 +19,7 @@ test('can navigate to Work page', async ({ page }) => {
 
   await page.getByRole('link', { name: 'Work' }).click();
 
-  await expect(page).toHaveURL(/\/work/);
+  await expect(page).toHaveURL('http://127.0.0.1:4321/work/');
 });
 
 test('Qiita link is set correctly', async ({ page }) => {

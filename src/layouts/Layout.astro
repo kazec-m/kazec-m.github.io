@@ -50,6 +50,7 @@ const currentPath = Astro.url.pathname;
             return (
               <a
                 href={item.href}
+                aria-current={isActive ? 'page' : undefined}
                 class={`font-gothic text-sm px-3 py-1.5 rounded-md ${
                   isActive
                     ? 'text-accent bg-accent-soft font-medium'

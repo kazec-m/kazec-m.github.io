@@ -80,6 +80,7 @@ test('main navigation is visible on desktop', async ({ page }) => {
 });
 
 test('Work page heading is visible on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/work/');
 
   await expect(
